@@ -1,10 +1,26 @@
-.btn {
+.container {
+  max-width: 100vw;
+  max-height: 100vh;
+}
+
+.target, .target_circle {
+  box-sizing: content-box;
+  border: 4px solid #000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.target {
   position: absolute;
-  transition: .5s;
-  border: none;
-  background: dodgerblue;
+  transition: .1s;
   cursor: pointer;
-  padding: 10px;
-  height: 40px;
-  width: 150px;
+  width: 30px;
+  height: 30px;
+}
+
+.target_circle {
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
 }

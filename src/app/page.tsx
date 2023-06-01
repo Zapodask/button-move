@@ -3,6 +3,7 @@
 import { useState } from 'react'
 
 import style from './page.module.css'
+import Image from 'next/image'
 
 interface Position {
   x: string
@@ -10,7 +11,7 @@ interface Position {
 }
 
 export default function Home() {
-  const [position, setPosition] = useState<Position>({ x: '0%', y: '0%' })
+  const [position, setPosition] = useState<Position>({ x: '50%', y: '50%' })
 
   const mouseOver = () => {
     const newPositions = {
@@ -26,8 +27,12 @@ export default function Home() {
   }
 
   return (
-    <button className={style.btn} onClick={hancleClick} onMouseOver={mouseOver} style={{ top: position.x, left: position.y }}>
-      Clique aqui
-    </button>
+    <div className={style.container}>
+      <div className={style.target} onClick={hancleClick} onMouseOver={mouseOver} style={{ top: position.x, left: position.y }}>
+        <div className={style.target_circle}>
+          <div className={style.target_circle}/>
+        </div>
+      </div>
+    </div>
   );
 }
